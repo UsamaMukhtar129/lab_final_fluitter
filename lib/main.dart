@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:password_generator_flutter/description_card.dart';
@@ -56,7 +55,69 @@ class _PasswordGeneratorState extends State<PasswordGenerator> {
       drawer: Container(
         width: drawerSize,
         child: Drawer(
-          child: DescriptionWidget(),
+          child:ListView(
+            children: [
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                ),
+                child: Center(
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Icon(Icons.account_circle, color: Colors.white,size: 40,),
+                        flex: 2,
+                      ),
+                      Expanded(
+                        flex: 6,
+                        child: Text(
+                          "Codes Insider",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              ListTile(
+                title: Text("SIMPLE"),
+                leading: IconButton(
+                  icon: Icon(Icons.home),
+                  onPressed: () {
+
+
+
+                  },
+                ),
+                onTap: ()
+                {
+                  Navigator.pop (context);
+                },
+              ),
+              Divider(
+                color: Colors.grey,
+              ),
+              ListTile(
+                title: Text("HARD"),
+                leading: IconButton(
+                  icon: Icon(Icons.account_circle),
+                  onPressed: () {
+                  },
+                ),
+                onTap: ()
+                {
+                  Navigator.pop (context);
+                },
+              ),
+              Divider(
+                color: Colors.grey,
+              ),
+
+            ],
+          ) ,
         ),
       ),
       body: PasswordGenerationWidget(),
@@ -336,42 +397,43 @@ class _PasswordGenerationWidgetState extends State<PasswordGenerationWidget> {
                                         ],
                                       ),
                                     ),
-                                    Container(
-                                      width: textfieldWidth * 0.4,
-                                      height: 100,
-                                      child: RaisedButton(
-                                        child: const Text(
-                                          "Generate",
-                                          style: TextStyle(
-                                            fontSize: 12,
-                                          ),
-                                        ),
-                                        onPressed: () {
-                                          setState(() {
-                                            this.newPassword =
-                                                PasswordGeneration.newPassword(
-                                                    pwController.text.length !=
-                                                            0
-                                                        ? pwController.text
-                                                        : "",
-                                                    ezwordController
-                                                                .text.length !=
-                                                            0
-                                                        ? ezwordController.text
-                                                        : "",
-                                                    lengthController
-                                                                .text.length !=
-                                                            0
-                                                        ? int.parse(
-                                                            lengthController
-                                                                .text)
-                                                        : 0,
-                                                    _includeSpecialCharacter);
-                                          });
-                                        },
-                                      ),
-                                    ),
+
                                   ])),
+                        ),
+                        Container(
+                          width: textfieldWidth * 0.4,
+                          height: 100,
+                          child: RaisedButton(
+                            child: const Text(
+                              "Generate",
+                              style: TextStyle(
+                                fontSize: 12,
+                              ),
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                this.newPassword =
+                                    PasswordGeneration.newPassword(
+                                        pwController.text.length !=
+                                            0
+                                            ? pwController.text
+                                            : "",
+                                        ezwordController
+                                            .text.length !=
+                                            0
+                                            ? ezwordController.text
+                                            : "",
+                                        lengthController
+                                            .text.length !=
+                                            0
+                                            ? int.parse(
+                                            lengthController
+                                                .text)
+                                            : 0,
+                                        _includeSpecialCharacter);
+                              });
+                            },
+                          ),
                         ),
                       ],
                     ),
