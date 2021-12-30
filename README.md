@@ -1,4 +1,5 @@
-# lab_final_fluitter
+# lab_final_flutter
+**Assalam-o-Alaikum!**
 Sir This project is not exactly matches to tasks requirments, But most of the tasks points are completed.
 In this project their are two sections one is simple mode and other is the hard mode.
 Process working of the password generator in following:
