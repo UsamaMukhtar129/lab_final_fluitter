@@ -10,8 +10,8 @@ Process working of the password generator in following:
    --------Enter your password that you are usually used.
 #2 Easy Words means simple alphabatics
    --------Enter some variation words like your pet name, your favorite animal name, etc.
-#3 Length means that size 
-   --------Enter the numbers length only 08 Characters.
+#3 Enter the special symbols 
+   --------Enter the symbols i.e #@$%^!.
    
                   #Hard
 
