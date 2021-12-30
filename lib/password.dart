@@ -35,7 +35,7 @@ class PasswordGeneration {
       p += "0";
     }
     
-    var BASE64 = specialCharacter ? BASE_INCLUDE_SPECIALCHAR : BASE_NOTINCLUDE_SPECIALCHAR;
+   var BASE64 = specialCharacter ? BASE_INCLUDE_SPECIALCHAR : BASE_NOTINCLUDE_SPECIALCHAR;
     for (int c=0; c < p.length; c += 6) {
       if(p.length - c < 6){
         break;
@@ -45,6 +45,5 @@ class PasswordGeneration {
     print(r);
     return r;
   }
-
 
 }
